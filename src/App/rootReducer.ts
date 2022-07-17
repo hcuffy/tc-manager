@@ -1,7 +1,10 @@
 import {combineReducers} from 'redux';
+import {connectRouter} from 'connected-react-router';
 
 import {applyDashboardReducer} from './pods/dashboard/reducers';
 
-const rootReducer = combineReducers({data: applyDashboardReducer});
+export default history => combineReducers({
+    router: connectRouter(history),
+    data:   applyDashboardReducer
+});
 
-export default rootReducer;
