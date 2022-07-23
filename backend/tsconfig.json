@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES6",
+      "noResolve": false,
+      "noImplicitAny": false,
+      "strictNullChecks": true,
+      "noUnusedParameters": false,
+      "skipLibCheck": true,
+      "noUnusedLocals": false,
+      "sourceMap": true,
+      "types": [
+          "node"
+      ],
+      "typeRoots": [
+          "node_modules/@types"
+      ],
+      "outDir": "dist"
+  }
+}

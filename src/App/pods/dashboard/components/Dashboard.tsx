@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {Button} from 'antd';
 
+import '../styles.css';
+
 function DashboardComponent() {
     const {t} = useTranslation();
 

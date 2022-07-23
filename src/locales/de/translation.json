@@ -3,6 +3,7 @@
     "title" : "Dashboard"
   },
   "testcase": {
-    "title" : "Test Cases"
+    "title" : "Test Cases",
+    "suites" : "Suites"
   }
 }

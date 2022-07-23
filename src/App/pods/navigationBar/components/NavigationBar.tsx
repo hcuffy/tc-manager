@@ -1,30 +1,26 @@
 import React, {useState} from 'react';
-import {NavLink, Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import {Button} from 'antd';
 
 export default function NavigationBar() {
-    const [toggleState, setToggleState] = useState(false);
+    const [toggleNavigation, setNavigation] = useState(false);
 
     const toggle = () => {
-        setToggleState(!toggleState);
+        setNavigation(!toggleNavigation);
     };
 
     return (
-        <header>
-            <div onClick={toggle}>
-                <Link to='/'>Test Case Manager</Link>
-            </div>
-
+        <div>
             <nav>
-                <ul>
-                    <NavLink onClick={toggle} to='/'>
-                        <li>Dashboard</li>
-                    </NavLink>
-                    <NavLink to='/testcases' onClick={toggle}>
-                        <li>Test Cases</li>
-                    </NavLink>
-                </ul>
+                <NavLink onClick={toggle} to='/'>
+                    <Button>Dashboard</Button>
+                </NavLink>
+                <NavLink to='/testcases' onClick={toggle}>
+                    <Button>Test Cases</Button>
+                </NavLink>
             </nav>
-        </header>
+
+        </div>
     );
 }
 

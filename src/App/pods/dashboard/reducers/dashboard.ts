@@ -5,9 +5,7 @@ const initialLoadState = {
     testCases: []
 };
 
-export const applyDashboardReducer = (state = initialLoadState, action) => {
-    const type = _.get(action, 'type', 'GET_TEST_CASES');
-    const payload = _.get(action, 'payload', {});
+export const applyDashboardReducer = (state = initialLoadState, {type, payload}) => {
     const newState = _.merge({}, state, payload);
 
     const actionHandlers = {

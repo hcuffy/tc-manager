@@ -1,15 +1,17 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 
-import NavigationBar from './NavigationBar';
 import {TestCases} from '../../testcases/components';
 import {Dashboard} from '../../dashboard/components';
+import NavigationBar from './NavigationBar';
+
+import '../styles.css';
 
 export function NavigationRoutes() {
     return (
-        <div>
+        <div className={'routeContainer'}>
             <NavigationBar/>
-            <div >
+            <div className={'routesContainer'}>
                 <Routes>
                     <Route path='/' element={<Dashboard/>}/>
                     <Route path='/testcases' element={<TestCases/>}/>
