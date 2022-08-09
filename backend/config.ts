@@ -16,11 +16,9 @@ const baseConfig = {
 };
 
 export default function getConfig() {
-    switch (process.env.REACT_APP_ENVIRONMENT) {
+    switch (process.env.NODE_ENV) {
         case 'development':
             return baseConfig.development;
-        case 'production':
-            return baseConfig.production;
         default:
             return baseConfig.production;
     }

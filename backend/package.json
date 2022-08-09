@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc && nodemon $NODE_DEBUG_OPTION dist/server & tsc --watch",
+    "dev": "tsc && NODE_ENV=development nodemon ./dist/server && tsc --watch",
     "kill": "fuser -k -n tcp 8000",
     "fix": "yarn eslint src --fix",
     "lint": "yarn eslint src",
@@ -14,11 +14,11 @@
     "tsc": "tsc"
   },
   "dependencies": {
+    "body-parser": "1.20.0",
     "cors": "2.8.5",
     "express": "4.18.1",
     "mongoose": "6.4.4",
-    "serve-static": "1.15.0",
-    "body-parser": "1.20.0"
+    "serve-static": "1.15.0"
   },
   "devDependencies": {
     "@types/body-parser": "1.19.2",
@@ -30,5 +30,8 @@
     "eslint": "8.20.0",
     "nodemon": "2.0.19",
     "typescript": "4.7.4"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "dashboard": {
+    "title" : "Dashboard"
+  },
+  "testcase": {
+    "title" : "Test Cases",
+    "suites" : "Suites"
+  }
+}

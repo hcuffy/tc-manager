@@ -12,9 +12,13 @@
       "types": [
           "node"
       ],
+      "outDir": "dist",
       "typeRoots": [
           "node_modules/@types"
-      ],
-      "outDir": "dist"
-  }
+      ]
+  },
+    "include": [
+        "*.d.ts",
+        "**/*.ts"
+    ]
 }

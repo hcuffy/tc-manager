@@ -1,9 +1,3 @@
-//const express = require('express');
-//const serveStatic = require('serve-static');
-//const cors = require('cors');
-//const bodyParser = require('body-parser');
-//const mongoose = require('mongoose');
-
 import * as express from 'express';
 import * as serveStatic from 'serve-static';
 import * as cors from 'cors';
@@ -19,18 +13,17 @@ const mongoURI = process.env.MONGODB_URI || developmentDatabaseURI;
 (async() => {
     try {
         await mongoose.connect(mongoURI);
-        console.log('mongoDB connected');
     } catch (error) {
         console.log(`Mongo connection error: ${error}`);
     }
 })();
 
 mongoose.connection.on('connected', () => {
-    console.log('Mongoose connected');
+    console.log('Connected to database');
 });
 
-mongoose.connection.on('error', err => {
-    console.log(`Mongoose connection error: ${ err}`);
+mongoose.connection.on('error', error => {
+    console.log(`Mongoose connection error: ${ error}`);
 });
 
 const app = express();
