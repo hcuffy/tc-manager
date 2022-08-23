@@ -20,8 +20,8 @@ yarn-error.log*
 /client/yarn-error.log*
 
 # Yarn
+.pnp.*
 .yarn/*
-!.yarn/cache
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
