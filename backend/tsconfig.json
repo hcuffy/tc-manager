@@ -1,24 +1,32 @@
 {
   "compilerOptions": {
-      "module": "commonjs",
-      "target": "ES6",
-      "noResolve": false,
-      "noImplicitAny": false,
-      "strictNullChecks": true,
-      "noUnusedParameters": false,
-      "skipLibCheck": true,
-      "noUnusedLocals": false,
-      "sourceMap": true,
-      "types": [
-          "node"
-      ],
-      "outDir": "dist",
-      "typeRoots": [
-          "node_modules/@types"
-      ]
-  },
-    "include": [
-        "*.d.ts",
-        "**/*.ts"
+    "module": "commonjs",
+    "target": "ES6",
+    "noResolve": false,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "noUnusedLocals": false,
+    "sourceMap": true,
+    "allowJs": true,
+    "types": [
+      "@types/jest",
+      "node"
+    ],
+    "outDir": "dist",
+    "typeRoots": [
+      "node_modules/@types"
     ]
+  },
+  "include": [
+    "*.d.ts",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "jest.config.js",
+    "./dist",
+    "./coverage",
+    "__tests__"
+  ]
 }

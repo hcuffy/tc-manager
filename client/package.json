@@ -6,7 +6,6 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf dist/ && tsc",
-    "setup": "yarn install && \"cd backend\" yarn install",
     "dev": "REACT_APP_ENVIRONMENT=development ESLINT_NO_DEV_ERRORS=true react-scripts start",
     "dev:backend": "concurrently \\\"REACT_APP_ENVIRONMENT=development ESLINT_NO_DEV_ERRORS=true react-scripts start\\\" \\\"cd ../backend && yarn dev\\\"",
     "eject": "react-scripts eject",

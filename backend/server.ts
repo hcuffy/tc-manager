@@ -5,12 +5,13 @@ import * as bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
 import getConfig from './config';
+import router from './router';
 
 const {database} = getConfig();
 const developmentDatabaseURI = `mongodb://${database.host}:${database.port}/${database.dbName}`;
 const mongoURI = process.env.MONGODB_URI || developmentDatabaseURI;
 
-(async() => {
+(async () => {
     try {
         await mongoose.connect(mongoURI);
     } catch (error) {
@@ -23,7 +24,7 @@ mongoose.connection.on('connected', () => {
 });
 
 mongoose.connection.on('error', error => {
-    console.log(`Mongoose connection error: ${ error}`);
+    console.log(`Mongoose connection error: ${error}`);
 });
 
 const app = express();
@@ -33,10 +34,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({limit: '15mb'}));
 app.use(cors());
 app.use(serveStatic('build'));
-
-app.get('/', (_request, response) => {
-    response.json({message: 'backend is working'});
-});
+app.use('/', router)
 
 app.listen(port);
 console.log(`Server started on port ${port}`);

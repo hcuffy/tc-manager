@@ -8,27 +8,33 @@
     "build": "tsc",
     "dev": "tsc && NODE_ENV=development nodemon ./dist/server && tsc --watch",
     "kill": "fuser -k -n tcp 8000",
-    "fix": "yarn eslint src --fix",
-    "lint": "yarn eslint src",
+    "fix": "yarn eslint --fix",
+    "lint": "yarn eslint router.ts",
     "start": "node dist/server",
+    "test": "jest --coverage",
     "tsc": "tsc"
   },
   "dependencies": {
     "body-parser": "1.20.0",
     "cors": "2.8.5",
     "express": "4.18.1",
+    "fs-extra": "^10.1.0",
     "mongoose": "6.4.4",
     "serve-static": "1.15.0"
   },
   "devDependencies": {
     "@types/body-parser": "1.19.2",
     "@types/express": "4.17.13",
+    "@types/jest": "^28.1.8",
     "@types/lodash": "4.14.182",
     "@types/node": "18.0.6",
-    "@typescript-eslint/eslint-plugin": "5.30.7",
-    "@typescript-eslint/parser": "5.30.7",
-    "eslint": "8.20.0",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "eslint": "^8.16.0",
+    "jest": "^29.0.1",
     "nodemon": "2.0.19",
+    "supertest": "^6.2.4",
+    "ts-jest": "^28.0.8",
     "typescript": "4.7.4"
   },
   "engines": {
